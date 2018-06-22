@@ -1,7 +1,7 @@
 [
 {
-  "modid": "banhammerJ",
-  "name": "banhammerJ",
+  "modid": "BanHammerJ",
+  "name": "BanHammerJ",
   "description": "A modpack ban.",
   "version": "${version}",
   "mcversion": "${mcversion}",

@@ -17,10 +17,6 @@ buildscript {
 
 apply plugin: 'forge'
 
-version = "1.0"
-group= "com.yourname.modid" // http://maven.apache.org/guides/mini/guide-naming-conventions.html
-archivesBaseName = "modid"
-
 minecraft {
     version = "1.7.10-10.13.4.1614-1.7.10"
     runDir = "eclipse"
@@ -40,7 +36,7 @@ targetCompatibility = 1.8
 
 version = "${config.version}"
 group= "bartimaeusnek."+"${config.modid}" // http://maven.apache.org/guides/mini/guide-naming-conventions.html
-archivesBaseName = "${config.modid}"+"j"
+archivesBaseName = "${config.modid}"
 
 dependencies {
     // you may put jars on which you depend on in ./libs

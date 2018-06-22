@@ -10,10 +10,10 @@ import cpw.mods.fml.common.Mod;
 import cpw.mods.fml.common.Mod.EventHandler;
 import cpw.mods.fml.common.event.FMLPreInitializationEvent;
 
-@Mod(modid = BanHammer.MODID, version = BanHammer.VERSION, acceptableRemoteVersions = "*")
+@Mod(modid = BanHammer.MODID, name = BanHammer.MODID, version = BanHammer.VERSION, acceptableRemoteVersions = "*")
 public final class BanHammer {
-    public final static String MODID  = "BanHammer";
-    public final static String VERSION = "0.0.1J";
+    public final static String MODID  = "BanHammerJ";
+    public final static String VERSION = "0.0.1";
     public final static Logger LOGGER = LogManager.getLogger(MODID);
     public static ArrayList<String> bans = new ArrayList<String>();
 
