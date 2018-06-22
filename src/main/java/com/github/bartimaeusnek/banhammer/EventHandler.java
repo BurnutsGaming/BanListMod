@@ -21,7 +21,7 @@ public final class EventHandler {
     	UUID id  = event.player.getUniqueID();
             for (String name: BanHammer.bans)
                 if ( id.toString().equals(name) ){
-                     if (FMLCommonHandler.instance().getEffectiveSide().isServer()){
+                     if (FMLCommonHandler.instance().getSide().isServer()){
                     	event.player.setDead();
                     	String playername = null;
                     	for (String activename : MinecraftServer.getServer().getAllUsernames()) {
