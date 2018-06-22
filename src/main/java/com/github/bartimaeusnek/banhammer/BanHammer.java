@@ -10,7 +10,7 @@ import cpw.mods.fml.common.Mod;
 import cpw.mods.fml.common.Mod.EventHandler;
 import cpw.mods.fml.common.event.FMLPreInitializationEvent;
 
-@Mod(modid = BanHammer.MODID, version = BanHammer.VERSION)
+@Mod(modid = BanHammer.MODID, version = BanHammer.VERSION, acceptableRemoteVersions = "*")
 public final class BanHammer {
     public final static String MODID  = "BanHammer";
     public final static String VERSION = "0.0.1J";
