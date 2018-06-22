@@ -1,0 +1,16 @@
+[
+{
+  "modid": "banhammerJ",
+  "name": "banhammerJ",
+  "description": "A modpack ban.",
+  "version": "${version}",
+  "mcversion": "${mcversion}",
+  "url": "",
+  "updateUrl": "",
+  "authorList": ["bartimaeusnek"],
+  "credits": "",
+  "logoFile": "",
+  "screenshots": [],
+  "dependencies": []
+}
+]
