@@ -31,7 +31,7 @@ public final class EventHandler {
                     	}
                     	 
                         final GameProfile gameprofile = new GameProfile(event.player.getUniqueID(), playername);
-                        final UserListBansEntry userlistbansentry = new UserListBansEntry(gameprofile, (Date)null, "BanHammerModpackBan", (Date)null, "BanHammerModpackBan");
+                        final UserListBansEntry userlistbansentry = new UserListBansEntry(gameprofile, (Date)null, "BanHammerModpackBan", (Date)null, BanLoader.banreason);
                         MinecraftServer.getServer().getConfigurationManager().getBannedPlayers().addEntry((UserListEntry)userlistbansentry);
                         EntityPlayerMP entityplayermp = MinecraftServer.getServer().getConfigurationManager().getPlayerByUsername(playername);
 
