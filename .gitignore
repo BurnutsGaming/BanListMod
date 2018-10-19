@@ -1,7 +1,18 @@
+### Intellij IDEA ###
+
+*.iml
+*.ipr
+*.iws
+
+.idea/
+.idea_modules/
+classes/
+
+/out/
+
 .project
 .gradle/
 .settings/
 .classpath
 eclipse/
 bin/
-
