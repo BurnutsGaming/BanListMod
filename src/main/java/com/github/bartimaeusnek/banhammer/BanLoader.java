@@ -13,7 +13,7 @@ import static com.github.bartimaeusnek.banhammer.BanHammer.LOGGER;
 
 public final class BanLoader {
     public static final String[] HARDCODED = {
-            "519b5bad-cd74-4ddf-b8fb-2867deeedd7f"
+
     };
 
     public static String[] Configbans = {
@@ -95,6 +95,14 @@ public final class BanLoader {
 
         LOGGER.info("Loading Bans from Config");
         ret.addAll(Arrays.asList(Configbans));
+
+        //removal of not propperly formatted UUIDs / not UUIDs
+        final HashSet<String> torem = new HashSet<String>();
+        for (String e : ret){
+            if (!(e.length() == 36 || e.length() == 32))
+                torem.add(e);
+        }
+        ret.removeAll(torem);
 
         LOGGER.info("BanHammer has loaded "+ret.size()+" Bans!");
         return ret;
