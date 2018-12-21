@@ -63,7 +63,7 @@ public class BanHammerCommand extends CommandBanPlayer {
                         }
                     }
                     try {
-                        final File bantxt = new File(BanHammer.configdir.toPath()+"/Bans.txt");
+                        final File bantxt = new File(BanHammer.configdir.toPath()+"/Bans.BanHammer");
                         if (!bantxt.exists())
                             bantxt.createNewFile();
                         final FileWriter fw = new FileWriter(bantxt,true);

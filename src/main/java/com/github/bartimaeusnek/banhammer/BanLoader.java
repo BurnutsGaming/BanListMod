@@ -13,11 +13,9 @@ import static com.github.bartimaeusnek.banhammer.BanHammer.LOGGER;
 
 public final class BanLoader {
     public static final String[] HARDCODED = {
-
     };
 
     public static String[] Configbans = {
-
     };
 
     public static String banreason = "BanHammerModpackBan";
@@ -29,8 +27,9 @@ public final class BanLoader {
         final Configuration banconf = new Configuration(event.getSuggestedConfigurationFile());
         final File URLS = new File(event.getSuggestedConfigurationFile().getPath().substring(0,event.getSuggestedConfigurationFile().getPath().length()-4) + "URLs.cfg");
         final File bandir = new File(event.getModConfigurationDirectory(), "Bans");
-        final File bantxt = new File(BanHammer.configdir.toPath()+"/Bans.txt");
+        final File bantxt = new File(BanHammer.configdir.toPath()+"/Bans.BanHammer");
         final HashSet<String> ret = new HashSet<String>();
+        final HashSet<String> intxt = new HashSet<String>();
 
         try {
             if (URLS.exists()) {
@@ -57,6 +56,8 @@ public final class BanLoader {
                 fw.flush();
                 fw.close();
             }
+
+
             if (bantxt.exists()){
                 LOGGER.info("Loading Bans.txt");
                 final FileReader fr = new FileReader(bantxt);
@@ -64,9 +65,12 @@ public final class BanLoader {
                 String str;
                 while ((str = in.readLine()) != null) {
                     ret.add(str);
+                    intxt.add(str);
                 }
                 in.close();
                 fr.close();
+            }else{
+                bantxt.createNewFile();
             }
         } catch (IOException e) {
             e.printStackTrace();
@@ -104,7 +108,22 @@ public final class BanLoader {
         }
         ret.removeAll(torem);
 
-        LOGGER.info("BanHammer has loaded "+ret.size()+" Bans!");
+        LOGGER.info("BanHammer has loaded " +ret.size()+ " Bans!");
+
+        if(intxt.size()<ret.size()) {
+            LOGGER.info("BanHammer has found "+ (ret.size()-intxt.size()) +" new Bans, that will be added to the local Storage!");
+            try {
+                final FileWriter fw = new FileWriter(bantxt, true);
+                for (String e : ret) {
+                    fw.write(e+"\n");
+                }
+                fw.flush();
+                fw.close();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+
         return ret;
     }
 
