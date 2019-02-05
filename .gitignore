@@ -7,9 +7,9 @@
 .idea/
 .idea_modules/
 classes/
-
+*.txt
 /out/
-
+/build/
 .project
 .gradle/
 .settings/
